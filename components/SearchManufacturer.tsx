@@ -42,19 +42,20 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
             afterLeave={() => setQuery('')}
           >
             <ComboboxOptions className="relative mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;;">
-                {filteredManufacturers.map((item) => (
-                  <ComboboxOption
-                    key={item}
-                    value={item}
-                    // className='relative cursor-default select-none py-2 pl-10 pr-4 bg-blue-500 text-white'
-                    className={({ active }) =>
-                      `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                        active ? 'bg-blue-600 text-white' : ' text-black'
-                      }`
-                    }
-                  >
-                  </ComboboxOption>
-                ))
+              {filteredManufacturers.map((item) => (
+                <ComboboxOption
+                  key={item}
+                  value={item}
+                  // className='relative cursor-default select-none py-2 pl-10 pr-4 bg-blue-500 text-white'
+                  className={({ active }) =>
+                    `relative cursor-default select-none py-2 pl-10 pr-4 ${active ? 'bg-blue-600 text-white' : ' text-black'
+                    }`
+                  }
+                >
+                  {item}
+
+                </ComboboxOption>
+              ))
               }
             </ComboboxOptions>
           </Transition>
